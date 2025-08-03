@@ -11,3 +11,6 @@ source .env/bin/activate
 pip install -r requirements.txt
 streamlit run app.py --server.address=0.0.0.0 --server.port=8080 --server.enableCORS=false
 
+
+gcloud run deploy fintech-app  --source .
+
