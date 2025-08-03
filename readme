@@ -1,4 +1,4 @@
-Create a folder called fintech_app
+Create a folder called fintech
 Inside this folder create app.py
 Copy all your code in this file
 create requirements.txt
@@ -12,5 +12,5 @@ pip install -r requirements.txt
 streamlit run app.py --server.address=0.0.0.0 --server.port=8080 --server.enableCORS=false
 
 
-gcloud run deploy fintech-app  --source .
+gcloud run deploy fintech  --source .
 
