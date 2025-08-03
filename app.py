@@ -1,4 +1,4 @@
-# pip install streamlit pandas yfinance
+# pip install streamlit pandas yfinance autogen
 import streamlit as st
 from datetime import datetime
 import data_info
@@ -31,8 +31,11 @@ st.title(" ===== Financial Insights Generation with AutoGen ==== ")
 tickers = st.text_input("Enter stock tickers (comma-separated):")
 run = st.button("Run Analysis")
 
+# Set OpenAI key
+open_ai_key = st.secrets['OPENAI_API_KEY']
+
 # === Agents ===
-llm_config = {"model": "gpt-4o-mini", "api_key": data_info.open_ai_key}
+llm_config = {"model": "gpt-4o-mini", "api_key": open_ai_key}
 
 financial_assistant = AssistantAgent(
     name="FinancialAssistant",
