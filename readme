@@ -5,7 +5,7 @@ create requirements.txt
 then launch new terminal
 
 cd fintech_app # This is folder name
-create virtual environment: python3.10 -m venv .env
+create virtual environment: python3 -m venv .env
 ls -al
 source .env/bin/activate
 pip install -r requirements.txt
