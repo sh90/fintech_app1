@@ -27,7 +27,7 @@ def fetch_stock_data(ticker: str) -> dict:
 # === Streamlit UI ===
 st.set_page_config(page_title="Financial Report Generator", layout="wide")
 st.title(" ===== Financial Insights Generation with AutoGen ==== ")
-tickers = st.text_input("Enter stock tickers (comma-separated):")
+tickers = st.text_input("Enter stock ticker symbol ( Example: META)")
 run = st.button("Run Analysis")
 
 # Set OpenAI key
@@ -70,11 +70,10 @@ register_function(
 
 # === Workflow Execution ===
 if run and tickers:
-    ticker_list = [t.strip().upper() for t in tickers.split(",")]
     date_str = datetime.now().strftime("%Y-%m-%d")
 
     financial_prompt = f"""
-        Today is {date_str}. For each ticker in {ticker_list}, call fetch_stock_data(ticker) once and collect the results.
+        Today is {date_str}. For each ticker in {tickers}, call fetch_stock_data(ticker) once and collect the results.
         Return a JSON object summarizing all data. Do not add ```json and ``` in the final output.
     """
 
