@@ -1,7 +1,6 @@
 # pip install streamlit pandas yfinance autogen
 import streamlit as st
 from datetime import datetime
-import data_info
 from autogen import AssistantAgent, UserProxyAgent, register_function, initiate_chats
 
 # === Custom Tools ===
